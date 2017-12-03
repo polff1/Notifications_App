@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Hello World</title>
+        
+        <!-- Include jQuery Mobile stylesheets -->
+		<link rel="stylesheet" href="jquerymobile/jquery.mobile-1.4.5.min.css">
+		<!-- Include the jQuery library -->
+		<script src="js/jquery-2.1.0.js"></script>
+		<!-- Include the jQuery Mobile library -->
+		<script src="jquerymobile/jquery.mobile-1.4.5.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+         <link rel="stylesheet" href="jquery.ui.datepicker.mobile.css" />
+       <title>Hello World</title>
+    </head>
+    <body>
+        <!-- Start of first page -->
+<div data-role="page" id="page1">
+    
+	<div data-role="header">
+		<h1>Foo</h1>
+	</div><!-- /header -->
+    
+                <div data-role="panel" id="mypanel" data-position="left" data-display="push">
+                <a data-role="button" id="gotoPage3Butt" value="Page3">Schedule</a>
+                <a data-role="button">Clear all</a>
+                
+            </div>            
+            
+            <div data-theme="b" data-role="header" data-position="fixed">
+                <a href="#mypanel">Abrir panel</a>
+                <h1>Pol Felip</h1>
+            </div>
+
+	<div role="main" class="ui-content">
+        
+	<input type="button" value="Notifications" id="gotoPage2Butt">
+        
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- Start of second page -->
+<div data-role="page" id="page2">
+	<div data-role="header">
+		<h1>Notifications</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<input type="button" value="LoadList" id="loadListButt">
+        
+        <div>
+            <ul data-role="listview" id="myList2">
+               
+            </ul>
+            
+        </div>
+        
+		<p><a href="#page1">Back to first page</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+        
+<!-- Start of third page -->
+<div data-role="page" id="page3">
+	<div data-role="header">
+		<h1>date and hour selector</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		  <div data-role="main" class="ui-content">
+    <h4>New notification:</h4>
+    <form>
+     <label for="date-1">Date and time:  "</label>
+     <input type="datetime-local" name="date-1" id="date-1" value="">
+          <label for="text-basic">Title:</label>
+          <input type="text" name="text-basic" id="description" value="">
+          <button class="ui-btn ui-shadow" style="background-color:skyblue;" id="submit">Submit</button>
+          <input type="button" value="Load List" id="loadListButt">
+    </form>
+      
+          <ul data-role="listview" id="myList">
+          </ul>
+
+  </div>
+		<p><a href="#page1">Back to first page</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+        
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/moment.js"></script>
+        <script src="jQuery.ui.datepicker.js"></script>
+        <script src="jquery.ui.datepicker.mobile.js"></script>
+        
+    </body>
+</html>
